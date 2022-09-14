@@ -643,6 +643,7 @@
       box-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
       text-align: center;
       margin: 0 auto;
+      background-color: #f2f2f2
     }
 
     table {
@@ -651,11 +652,12 @@
     }
 
     table td {
-      border: 1px solid #039be5;
+      border: 1px solid #3f648d;
     }
 
     table th {
-      border: 1.1px solid #039be5;
+      border: 1.1px solid #3f648d;
+      font-weight: 500;
     }
 
     .tableContent {
@@ -702,12 +704,12 @@
                 </a></li>
               <button style="height:38px;width:80px;text-align:center;line-height:38px;margin: 5px; 
                 color: #009966; background-color: white;border: 1px solid #eee;
-                border-radius:5px;box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);">
+                border-radius:5px;box-shadow: 0px 0.5px 0px rgba(0, 0, 0, 0.3);">
                 确认销假
               </button>
               <button style="height:38px;width:80px;text-align:center;line-height:38px;margin: 5px; 
-                color: #009966; background-color: white;border: 1px solid #eee;
-                border-radius:5px;box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);">
+                color: #039be5; background-color: white;border: 1px solid #eee;
+                border-radius:5px;box-shadow: 0px 0.5px 0px rgba(0, 0, 0, 0.3);">
                 终止
               </button>
               <li class=tool_button><a id=FormCommandMore class=tool_button href=#><i class=i-icon-more-vert></i></a>
@@ -735,20 +737,20 @@
                   <tbody style="padding:5px">
                     <tr style="width:100%">
                       <th style="white-space: nowrap;">申请日期</th>
-                      <td colspan="2">2022-09-12</td>
+                      <td colspan="2" class="currentDate">null</td>
                     </tr>
                     <tr>
                       <th style="width:50%">学号</th>
-                      <td colspan="2">20121249318</td>
+                      <td class="stu_id" colspan="2">20121249318</td>
                     </tr>
                     <tr>
                       <th>姓名</th>
-                      <td colspan="2">方文宣</td>
+                      <td class="stu_name" colspan="2">方文宣</td>
                     </tr>
                     <tr>
                       <th>性别 <p style="display: inline; color: red">*</p>
                       </th>
-                      <td colspan="2">男 (male)</td>
+                      <td class="stu_sex" colspan="2">男 (male)</td>
                     </tr>
                     <tr>
                       <th>联系方式 <p style="display: inline; color: red">*</p>
@@ -757,7 +759,7 @@
                     </tr>
                     <tr>
                       <th>所在院系</th>
-                      <td colspan="2">计算机学院</td>
+                      <td class="stu_school" colspan="2">计算机学院</td>
                     </tr>
                     <tr>
                       <th>专业 <p style="display: inline; color: red">*</p>
@@ -771,17 +773,17 @@
                     <tr>
                       <th style="white-space: nowrap;">身份证号 <p style="display: inline; color: red">*</p>
                       </th>
-                      <td colspan="2">32323232232232232</td>
+                      <td class="stu_number" colspan="2">32323232232232232</td>
                     </tr>
                     <tr>
                       <th style="white-space: nowrap;">辅导员姓名 <p style="display: inline; color: red">*</p>
                       </th>
-                      <td colspan="2">杜新宇</td>
+                      <td class="stu_fudaoyuan" colspan="2">杜新宇</td>
                     </tr>
                     <tr>
                       <th>导师姓名 <p style="display: inline; color: red">*</p>
                       </th>
-                      <td colspan="2">张国庆</td>
+                      <td class="stu_teacher" colspan="2">张国庆</td>
                     </tr>
                     <tr>
                       <th>选择类型 <p style="display: inline; color: red">*</p>
@@ -817,14 +819,14 @@
                     <tr>
                       <th style="white-space: nowrap;">离校具体时间 <p style="display: inline; color: red">*</p>
                       </th>
-                      <td>2022-9-13</td>
-                      <td>18 : 00</td>
+                      <td class="currentDate">null</td>
+                      <td class="goTime">18 : 00</td>
                     </tr>
                     <tr>
                       <th style="white-space: nowrap;">返校具体时间 <p style="display: inline; color: red">*</p>
                       </th>
-                      <td style="white-space: nowrap;">2022-9-13 </td>
-                      <td>19 : 00</td>
+                      <td class="currentDate" style="white-space: nowrap;">null </td>
+                      <td class="backTime">19 : 00</td>
                     </tr>
                     <tr>
                       <th>请假天数</th>
@@ -868,53 +870,53 @@
                 </table>
                 <table border="1" width="83%" cellspacing="" cellpadding="5" align="center"
                   style="margin:auto;margin-top:10px">
-                  <tbody>
+                  <!--表头-->
+                  <thead>
                     <tr>
-                      <th rowspan="6" colspan="1">辅导员意见</th>
-                      </td>
+                    </tr>
+                  </thead>
+                  <!--表身-->
+                  <tbody style="padding:5px">
+                    <tr>
+                      <th rowspan="4">辅导员意见</p>
+                      </th>
                     </tr>
                     <tr>
-                      <td colspan="2">
-                        <input type="radio" checked="checked">同意
-                      </td>
+                      <td colspan="2" style="border-bottom: 0;"><input type="radio" checked="checked">同意</td>
                     </tr>
                     <tr>
-                      <td><input type="radio" checked="checked">同意</td>
+                      <td colspan="2" style="border-bottom: 0;border-top: 0;"><input type="radio" disabled>退回</td>
                     </tr>
                     <tr>
-                      <td><input type="radio" checked="checked">同意</td>
+                      <td colspan="2" style="border-top: 0;"><input type="radio" disabled>不同意</td>
                     </tr>
                     <tr>
-                      <td style="border-bottom:0"></td>
+                      <th>审批人</p>
+                      </th>
+                      <td class="stu_fudaoyuan" colspan="2">张娜</td>
                     </tr>
                     <tr>
-                      <td style="border-top:0"></td>
+                      <th>审批时间</th>
+                      <td class="currentDate" colspan="2">2022-9-14</td>
                     </tr>
                     <tr>
-                      <th style="border-top:0">审批人</th>
-                      <td colspan="2">张娜</td>
+                      <th rowspan="4">辅导员意见</p>
+                      </th>
                     </tr>
                     <tr>
-                      <th style="border-top:0">审批时间</th>
-                      <td colspan="2">2022-9-12</td>
+                      <td colspan="2" style="border-bottom: 0;"><input type="radio" checked="checked">同意</td>
                     </tr>
                     <tr>
-                      <th rowspan="4">学院分管学生工作副书记</th>
-                      </td>
+                      <td colspan="2" style="border-bottom: 0;border-top: 0;"><input type="radio" disabled>退回</td>
                     </tr>
                     <tr>
-                      <td colspan="2">
-                        <input type="radio" checked="checked">同意
-                      </td>
+                      <td colspan="2" style="border-top: 0;"><input type="radio" disabled>不同意</td>
                     </tr>
                     <tr>
-                      <td><input type="radio" checked="checked">同意</td>
-                    </tr>
-                    <tr>
-                      <td><input type="radio" checked="checked">同意</td>
-                    </tr>
                   </tbody>
+
                 </table>
+
               </div>
             </div>
             <!-- <div id=form_holder style="width:394px;display:block; text-align:center;
@@ -969,6 +971,16 @@
     const params = new URLSearchParams(location.search)
 
     const isJx = params.get('isJx')
+    // 获取学号，姓名，导师，身份证，性别，学院，辅导员姓名
+
+    $('.stu_id').text(params.get('id'))
+    $('.stu_name').text(params.get('name'))
+    $('.stu_teacher').text(params.get('teacher'))
+    $('.stu_fudaoyuan').text(params.get('fudaoyuan'))
+    $('.stu_school').text(params.get('school'))
+    $('.stu_sex').text(params.get('sex'))
+    $('.stu_number').text(params.get('number'))
+
 
     $('#qrcode').attr('src', 'qrcode.html' + location.search)
     $('.water').text(getRandomIntInclusive(2333333, 2666666))
@@ -986,4 +998,38 @@
       $('#noAction').show()
       document.title = '查看出校二维码 - 查看出校二维码'
     }
+
+    function getFormatDate() {
+      var date = new Date();
+      var month = date.getMonth() + 1;
+      var strDate = date.getDate();
+      var hours = date.getHours();
+      var minutes = date.getMinutes();
+      var seconds = date.getSeconds();
+      if (month >= 1 && month <= 9) {
+        month = "0" + month;
+      }
+      if (strDate >= 0 && strDate <= 9) {
+        strDate = "0" + strDate;
+      }
+      if (hours >= 0 && hours <= 9) {
+        hours = "0" + hours;
+      }
+      if (minutes >= 0 && minutes <= 9) {
+        minutes = "0" + minutes;
+      }
+      if (seconds >= 0 && seconds <= 9) {
+        seconds = "0" + seconds;
+      }
+      let  currentDate = date.getFullYear() + "-" + month + "-" + strDate
+      let currentTime = date.getHours() + ":" + minutes + ":" + seconds
+      let backTime = date.getHours() + 2 + ":" + minutes + ":" + seconds
+      return [currentDate,currentTime,backTime];
+    }
+    const currentDate_time = getFormatDate()
+    // console.log(currentDate_time)
+    $('.currentDate').text(currentDate_time[0])
+    $('.goTime').text(currentDate_time[1])
+    $('.backTime').text(currentDate_time[2])
+    
   </script>
